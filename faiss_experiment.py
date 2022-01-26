@@ -226,25 +226,26 @@ if __name__ == "__main__":
     result = []
     with open("vector.pkl", "rb") as f:
         vector = pickle.load(f)
-    for i in range(len(data) // 1000):
-        print((i + 1) * 1000)
-        res = time_test(data[0:(i + 1) * 1000], vector[0:(i + 1) * 1000])
-        result.append(res)
-    fs_f = [k[0] for k in result]
-    fs_pq = [k[1] for k in result]
-    fs_lsh = [k[2] for k in result]
-    fs_hnsw = [k[3] for k in result]
-    kt = [k[4] for k in result]
-    bt = [k[5] for k in result]
-    ann = [k[6] for k in result]
-    bm25_ = [k[7] for k in result]
-    plt.plot(fs_f, label="faiss_force")
-    plt.plot(fs_pq, label="faiss_pq")
-    plt.plot(fs_lsh, label="faiss_lsh")
-    plt.plot(fs_hnsw, label="faiss_hnsw")
-    plt.plot(kt, label="kd_tree")
-    plt.plot(bt, label="ball_tree")
-    plt.plot(ann, label="annoy")
-    plt.plot(bm25_, label="bm25")
-    plt.legend()
-    plt.show()
+
+    # for i in range(len(data) // 1000):
+    #     print((i + 1) * 1000)
+    #     res = time_test(data[0:(i + 1) * 1000], vector[0:(i + 1) * 1000])
+    #     result.append(res)
+    # fs_f = [k[0] for k in result]
+    # fs_pq = [k[1] for k in result]
+    # fs_lsh = [k[2] for k in result]
+    # fs_hnsw = [k[3] for k in result]
+    # kt = [k[4] for k in result]
+    # bt = [k[5] for k in result]
+    # ann = [k[6] for k in result]
+    # bm25_ = [k[7] for k in result]
+    # plt.plot(fs_f, label="faiss_force")
+    # plt.plot(fs_pq, label="faiss_pq")
+    # plt.plot(fs_lsh, label="faiss_lsh")
+    # plt.plot(fs_hnsw, label="faiss_hnsw")
+    # plt.plot(kt, label="kd_tree")
+    # plt.plot(bt, label="ball_tree")
+    # plt.plot(ann, label="annoy")
+    # plt.plot(bm25_, label="bm25")
+    # plt.legend()
+    # plt.show()
